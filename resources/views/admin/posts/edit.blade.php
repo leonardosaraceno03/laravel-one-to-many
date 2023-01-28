@@ -15,8 +15,15 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">likes</label>
-            <input value="{{ $elem['likes'] }}" type="number" class="form-control" name="likes">
+            <label for="">Categories</label>
+            <select class="form-control" name="category_id" id="">
+                <option value="">Seleziona la categoria</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
 

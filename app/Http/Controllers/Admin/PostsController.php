@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -18,7 +19,7 @@ class PostsController extends Controller
         //
         $var = Post::paginate(10);
 
-        // dd($elem);
+
         return view('admin.posts.index', compact('var'));
     }
 
@@ -29,8 +30,11 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.posts.create');
+        $data = [
+            'categories' => Category::All()
+        ];
+
+        return view('admin.posts.create', $data);
     }
 
     /**

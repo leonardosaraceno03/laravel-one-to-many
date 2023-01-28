@@ -13,15 +13,14 @@ class PostSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 0; $i < 100; $i++){
+        for ($i = 0; $i < 100; $i++) {
             $newPost = new Post();
-            
-            $newPost->title = $faker -> name();
-            $newPost->content = $faker -> sentence();
-            $newPost->likes = $faker -> numberBetween(0, 100);
-            
+
+            $newPost->title = $faker->name();
+            $newPost->content = $faker->sentence();
+
+
             $newPost->save();
-            
         }
-    } 
+    }
 }

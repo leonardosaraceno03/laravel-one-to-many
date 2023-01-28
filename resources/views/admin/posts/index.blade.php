@@ -8,7 +8,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Ttitle</th>
                 <th scope="col">Content</th>
-                <th scope="col">Likes</th>
+                <th scope="col">Category</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
                         <a href="{{ route('admin.posts.show', $elem['id']) }}">{{ $elem['title'] }}</a>
                     </td>
                     <td>{{ $elem['content'] }}</td>
-                    <td>{{ $elem['likes'] }}</td>
+                    <td>{{ $elem['category_id'] }}</td>
                     <td>
                         <a href="{{ route('admin.posts.edit', $elem['id']) }}">
                             Edit
@@ -29,8 +29,8 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit">
-                                Destroy
+                            <button class="btn btn-danger" type="submit">
+                                Delete
                             </button>
                         </form>
                     </td>
